@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/security-scanner-pages/static/css/main.0398d581.chunk.css",
+    "main.js": "/security-scanner-pages/static/js/main.4c3c36a6.chunk.js",
+    "main.js.map": "/security-scanner-pages/static/js/main.4c3c36a6.chunk.js.map",
+    "runtime-main.js": "/security-scanner-pages/static/js/runtime-main.535e1e1b.js",
+    "runtime-main.js.map": "/security-scanner-pages/static/js/runtime-main.535e1e1b.js.map",
+    "static/js/2.407edf91.chunk.js": "/security-scanner-pages/static/js/2.407edf91.chunk.js",
+    "static/js/2.407edf91.chunk.js.map": "/security-scanner-pages/static/js/2.407edf91.chunk.js.map",
+    "static/js/3.0269cf02.chunk.js": "/security-scanner-pages/static/js/3.0269cf02.chunk.js",
+    "static/js/3.0269cf02.chunk.js.map": "/security-scanner-pages/static/js/3.0269cf02.chunk.js.map",
+    "index.html": "/security-scanner-pages/index.html",
+    "static/css/main.0398d581.chunk.css.map": "/security-scanner-pages/static/css/main.0398d581.chunk.css.map",
+    "static/js/2.407edf91.chunk.js.LICENSE.txt": "/security-scanner-pages/static/js/2.407edf91.chunk.js.LICENSE.txt",
+    "static/media/dangerous.317ececd.csv": "/security-scanner-pages/static/media/dangerous.317ececd.csv",
+    "static/media/half.5dedced7.csv": "/security-scanner-pages/static/media/half.5dedced7.csv"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.535e1e1b.js",
+    "static/js/2.407edf91.chunk.js",
+    "static/css/main.0398d581.chunk.css",
+    "static/js/main.4c3c36a6.chunk.js"
+  ]
+}
