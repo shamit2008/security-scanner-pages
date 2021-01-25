@@ -4,8 +4,8 @@ import dangerous from "./dangerous.csv";
 import half from "./half.csv";
 
 function Checker() {
-  const [website, setWebsite] = useState('www.google.com');
-  const [displayName, setDisplay] = useState('www.google.com');
+  const [website, setWebsite] = useState('Type in your website here');
+  const [displayName, setDisplay] = useState('www.yourwebsitescorewillcomehere.com');
   const [websiteDanger, setDanger] = useState(5); // scale from 0-100 or something
   const [resultStyle, setstyle] = useState({color: 'blue', fontSize: 40, textAlign:'center'});
   const [dangerousCSV, setDangerous] = useState(null);
@@ -99,8 +99,10 @@ function Checker() {
           </label>
           <input type="submit" value="Submit" />
         </form>
-
-        <p style={resultStyle}>{displayName} is {websiteDanger === 0 ? "Safe" : websiteDanger === 5 ? "Semi Dangerous" : "Dangerous"}</p> {/* style this is css */}
+        {/* <p>Did you use safety measures? These safety measures include using a VPN, browsing incognito, clearing your cache, or rejecting cookies?</p>
+        <button>Yes</button> */}
+        <p style={resultStyle}>{displayName} has a safety score of {websiteDanger/*websiteDanger === 0 ? "Safe" : websiteDanger === 5 ? "Semi Dangerous" : "Dangerous"*/}</p> {/* style this is css */}
+        <p>Lower is better</p>
       </header>
     </div>
   );

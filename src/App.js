@@ -3,6 +3,7 @@ import React from 'react';
 import Checker from "./components/Checker.js";
 import Info from "./components/Info.js";
 import Contact from "./components/Contact.js";
+import Improve from "./components/Improve.js";
 import {
   BrowserRouter as Router,
   Route,
@@ -37,6 +38,9 @@ function App() {
             <li>
               <Link to="/contact">Contact Us</Link>
             </li>
+            <li>
+              <Link to="/improve">Improve</Link>
+            </li>
           </ul>
           {/* navigation bar end*/}
 
@@ -45,6 +49,9 @@ function App() {
               window.location.href = "www.google.com";
               return null;
             }} />;
+                <Route path="/improve">
+              <Improve />
+            </Route>
             <Route path="/info">
               <Info />
             </Route>
@@ -53,6 +60,9 @@ function App() {
             </Route>
             <Route path="/">
               <Checker />
+            </Route>
+            <Route path="/improve">
+              <Improve />
             </Route>
           </Switch>
         </div>
