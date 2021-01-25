@@ -29,15 +29,24 @@ function Checker() {
   }, []); // [] means that this useEffect will not repeat
 
   const displayInfo = () => {
+    let eWebsite = website.toLowerCase();
+    let eWebArray = eWebsite.split('.');
+    let isWrong = false;
+    console.log(eWebArray);
+    if (eWebArray.length != 3 || eWebArray[0] != "www" || eWebArray[2] != "com"){
+      isWrong = true;
+    }
+    console.log(isWrong);
     setDisplay(website);
     // check which array website is in
+    
     let websiteFound = false;
     let temp = setDanger;
 
     
     
     dangerousCSV.map((dWebsite) => {
-      if (dWebsite[0] === website){
+      if (dWebsite[0] === eWebsite){
         setDanger(10);
         temp = 10;
         websiteFound = true;
@@ -45,7 +54,7 @@ function Checker() {
     });
 
     halfCSV.map((hWebsite) =>{
-      if (hWebsite[0] === website){
+      if (hWebsite[0] === eWebsite){
         setDanger(5);
         temp = 5;
         websiteFound = true;
@@ -63,15 +72,20 @@ function Checker() {
     console.log(isolatedWebsite);
     console.log(website);
 
-    if (temp === 0){
+    if (temp === 0 && isWrong == false){
       setstyle({color: 'green', fontSize: 40, textAlign:'center'});
     }
     else if (temp === 5){
       setstyle({color: 'blue', fontSize: 40, textAlign:'center'});
     }
-    else if (temp === 10 || temp === -1){
+    else if (temp === 10 || temp === -1 || isWrong == true){
       setstyle({color: 'red', fontSize: 40, textAlign:'center'});
     }
+
+    if (isWrong == true){
+      setDanger(11);
+    }
+    console.log (websiteDanger);
   }
 
   const handleSubmit = (evt) => {
@@ -101,7 +115,8 @@ function Checker() {
         </form>
         {/* <p>Did you use safety measures? These safety measures include using a VPN, browsing incognito, clearing your cache, or rejecting cookies?</p>
         <button>Yes</button> */}
-        <p style={resultStyle}>{displayName} has a safety score of {websiteDanger/*websiteDanger === 0 ? "Safe" : websiteDanger === 5 ? "Semi Dangerous" : "Dangerous"*/}</p> {/* style this is css */}
+        
+        <p style={resultStyle}>{displayName} {websiteDanger == 0 ? "has a safety score of zero, which is the best one. Happy browsing! Make sure there were no typos" : websiteDanger === 5 ? "Has a safety score of 5. That means it is ok to use, but it may track you. Click the improve button at the top to try and make your browsing experience safer, or avoid this site. " : websiteDanger == 10 ? "has a safety score of 10. AVOID THIS SITE IF YOU CAN. If you absolutely must use this site, visit our improve page to see how to improve": "is not a valid url. Make sure it is in the form of www.entersite.com. "}</p> {/* style this is css */}
         <p>Lower is better</p>
       </header>
     </div>

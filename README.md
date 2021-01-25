@@ -73,9 +73,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Credits
 
 Shaurya Mittal
+
 Quinn Shim
+
 Shveta Goel
+
 Abhishek Goel
+
 Mohit Mittal
 
 
