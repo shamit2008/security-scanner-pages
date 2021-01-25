@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import Papa from "papaparse";
-import dangerous from "./dangerous.csv"; 
-import half from "./half.csv";
+import dangerous from "./CSV/dangerous.csv"; 
+import half from "./CSV/half.csv";
 
 function Checker() {
   const [website, setWebsite] = useState('Type in your website here');
-  const [displayName, setDisplay] = useState('www.yourwebsitescorewillcomehere.com');
+  const [displayName, setDisplay] = useState('Www.google.com');
   const [websiteDanger, setDanger] = useState(5); // scale from 0-100 or something
   const [resultStyle, setstyle] = useState({color: 'blue', fontSize: 40, textAlign:'center'});
   const [dangerousCSV, setDangerous] = useState(null);
@@ -33,7 +33,7 @@ function Checker() {
     let eWebArray = eWebsite.split('.');
     let isWrong = false;
     console.log(eWebArray);
-    if (eWebArray.length != 3 || eWebArray[0] != "www" || eWebArray[2] != "com"){
+    if (eWebArray.length != 3 || (eWebArray[0] != "www" && eWebArray[2] != "com" && eWebArray[2] != "org" && eWebArray[2] != "gov")){
       isWrong = true;
     }
     console.log(isWrong);
@@ -71,16 +71,23 @@ function Checker() {
     let isolatedWebsite = (website.substring(4, website.length-4));
     console.log(isolatedWebsite);
     console.log(website);
+    let safety = prompt("Did you use safety measures indicated in the improve tab? Y or N.");
+    if (safety == "Y" || safety == "y"){
+      setDanger((temp)/2);
+      console.log(websiteDanger)
+    }
 
+    
     if (temp === 0 && isWrong == false){
-      setstyle({color: 'green', fontSize: 40, textAlign:'center'});
+      setstyle({color: 'green', fontSize: 20, textAlign:'center'});
     }
     else if (temp === 5){
-      setstyle({color: 'blue', fontSize: 40, textAlign:'center'});
+      setstyle({color: 'blue', fontSize: 20, textAlign:'center'});
     }
     else if (temp === 10 || temp === -1 || isWrong == true){
-      setstyle({color: 'red', fontSize: 40, textAlign:'center'});
+      setstyle({color: 'red', fontSize: 20, textAlign:'center'});
     }
+   
 
     if (isWrong == true){
       setDanger(11);
@@ -116,8 +123,8 @@ function Checker() {
         {/* <p>Did you use safety measures? These safety measures include using a VPN, browsing incognito, clearing your cache, or rejecting cookies?</p>
         <button>Yes</button> */}
         
-        <p style={resultStyle}>{displayName} {websiteDanger == 0 ? "has a safety score of zero, which is the best one. Happy browsing! Make sure there were no typos" : websiteDanger === 5 ? "Has a safety score of 5. That means it is ok to use, but it may track you. Click the improve button at the top to try and make your browsing experience safer, or avoid this site. " : websiteDanger == 10 ? "has a safety score of 10. AVOID THIS SITE IF YOU CAN. If you absolutely must use this site, visit our improve page to see how to improve": "is not a valid url. Make sure it is in the form of www.entersite.com. "}</p> {/* style this is css */}
-        <p>Lower is better</p>
+        <p style={resultStyle}>{displayName} {websiteDanger == 0 ? "is safe.  Happy browsing! Make sure there were no typos" : websiteDanger === 5 ? "Is a bit unsafe.  That means it is ok to use, but it may track you. Click the improve button at the top to try and make your browsing experience safer, or avoid this site. " : websiteDanger == 10 ? "has a safety score of 10. AVOID THIS SITE IF YOU CAN. If you absolutely must use this site, visit our improve page to see how to improve": websiteDanger == 2.5 ? "This is a little  bit dangerous, but you used safety measures!" : "is not a valid url. Make sure it is in the form of www.entersite.com. "}</p> {/* style this is css */}
+        <p>{websiteDanger}</p>
       </header>
     </div>
   );
