@@ -125,7 +125,7 @@ function Checker() {
         <button>Yes</button> */}
         
         <p style={resultStyle}>{displayName} {websiteDanger == 0 ? "is safe.  Happy browsing! Make sure there were no typos" : websiteDanger === 5 ? "Is a bit unsafe.  That means it is ok to use, but it may track you. Click the improve button at the top to try and make your browsing experience safer, or avoid this site. " : websiteDanger == 10 ? "has a safety score of 10. AVOID THIS SITE IF YOU CAN. If you absolutely must use this site, visit our improve page to see how to improve": websiteDanger == 2.5 ? "This is a little  bit dangerous, but you used safety measures!" : "is not a valid url. Make sure it is in the form of www.entersite.com. "}</p> {/* style this is css */}
-        l
+        
       </header>
     </div>
   );
