@@ -7,7 +7,7 @@ function Checker() {
   const [website, setWebsite] = useState('Type in your website here');
   const [displayName, setDisplay] = useState('Www.google.com');
   const [websiteDanger, setDanger] = useState(5); // scale from 0-100 or something
-  const [resultStyle, setstyle] = useState({color: 'blue', fontSize: 40, textAlign:'center'});
+  const [resultStyle, setstyle] = useState({color: 'blue', fontSize: 20, textAlign:'center'});
   const [dangerousCSV, setDangerous] = useState(null);
   const [halfCSV, setHalf] = useState(null);
 
@@ -34,7 +34,7 @@ function Checker() {
     let isWrong = false;
     console.log(eWebArray);
     if (eWebArray.length != 3 || (eWebArray[0] != "www" && eWebArray[2] != "com" && 
-    eWebArray[2] != "org" && eWebArray[2] != "gov" && eWebArray[2] != "io")){
+    eWebArray[2] != "org" && eWebArray[2] != "gov" && eWebArray[2] != "io" && eWebArray[2] != "net")){
       isWrong = true;
     }
     console.log(isWrong);
