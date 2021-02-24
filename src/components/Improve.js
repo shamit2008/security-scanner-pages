@@ -35,10 +35,10 @@ function Improve() {
   return (
     <div className="App">
       <header className="App-header">
-        <h3>Improve some stuff</h3>
-        <p>So you want to improve your browsing habits. Great!
+        
+        <h3>So you want to improve your browsing habits. Great!
             
-        </p>
+        </h3>
         <p>
             <strong>Some ways to improve:</strong>
         </p>

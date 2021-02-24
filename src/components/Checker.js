@@ -74,7 +74,7 @@ function Checker() {
     console.log(website);
     let safety = prompt("Did you use safety measures indicated in the improve tab? Y or N.");
     if (safety == "Y" || safety == "y"){
-      setDanger((temp)/2);
+      setDanger((temp) - 3);
       console.log(websiteDanger)
     }
 
@@ -88,7 +88,7 @@ function Checker() {
     else if (temp === 10 || temp === -1 || isWrong == true){
       setstyle({color: 'red', fontSize: 20, textAlign:'center'});
     }
-   
+    
 
     if (isWrong == true){
       setDanger(11);
@@ -124,7 +124,12 @@ function Checker() {
         {/* <p>Did you use safety measures? These safety measures include using a VPN, browsing incognito, clearing your cache, or rejecting cookies?</p>
         <button>Yes</button> */}
         
-        <p style={resultStyle}>{displayName} {websiteDanger == 0 ? "is safe.  Happy browsing! Make sure there were no typos" : websiteDanger === 5 ? "Is a bit unsafe.  That means it is ok to use, but it may track you. Click the improve button at the top to try and make your browsing experience safer, or avoid this site. " : websiteDanger == 10 ? "has a safety score of 10. AVOID THIS SITE IF YOU CAN. If you absolutely must use this site, visit our improve page to see how to improve": websiteDanger == 2.5 ? "This is a little  bit dangerous, but you used safety measures!" : "is not a valid url. Make sure it is in the form of www.entersite.com. "}</p> {/* style this is css */}
+        <p style={resultStyle}>You visited the website {displayName}. {websiteDanger == 0 ? "This website is safe.  Happy browsing! Make sure there were no typos" 
+        : websiteDanger === 5 ? "It is a bit unsafe.  That means it is ok to use, but it is likely a data harvesting site that will track you. Click the improve button at the top to try and make your browsing experience safer, or avoid this site. " 
+        : websiteDanger == 10 ? "AVOID THIS SITE IF YOU CAN. If you absolutely must use this site, visit our improve page to see how to improve": 
+        websiteDanger == 2? "This is a little  bit dangerous, but you used safety measures!" : 
+        websiteDanger == 7? "This website is still dangerous, even though you used safety measures. If you can, I would still recommend using a different site. "
+        : "Unfortunately, this is not a valid url. Make sure it is in the form of www.entersite.com. "}</p> {/* style this is css */}
         
       </header>
     </div>

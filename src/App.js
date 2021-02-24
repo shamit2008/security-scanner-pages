@@ -30,7 +30,7 @@ function App() {
           {/* navigation bar start */}
           <ul id="headerBar">
             <li>
-              <Link to="/">Checker</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/info">Info</Link>
@@ -42,6 +42,7 @@ function App() {
               <Link to="/improve">Improve</Link>
             </li>
           </ul>
+
           {/* navigation bar end*/}
 
           <Switch>
