@@ -7,7 +7,7 @@ function Checker() {
   const [website, setWebsite] = useState('Type in your website here');
   const [displayName, setDisplay] = useState('Www.google.com');
   const [websiteDanger, setDanger] = useState(5); // scale from 0-100 or something
-  const [resultStyle, setstyle] = useState({color: 'blue', fontSize: 20, textAlign:'center'});
+  const [resultStyle, setstyle] = useState({color: 'black', fontSize: 20, textAlign:'center'});
   const [dangerousCSV, setDangerous] = useState(null);
   const [halfCSV, setHalf] = useState(null);
 
